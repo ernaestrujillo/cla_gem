@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Clasificación con Gemini</title>
+  <style>
+    body {font:16px system-ui;max-width:800px;margin:30px auto;padding:16px}
+    video,canvas {width:100%;max-width:480px;background:#eef2f4}
+    button {padding:12px;margin:8px 4px 8px 0}
+    pre {white-space:pre-wrap;background:#eef2f4;padding:16px}
+  </style>
+</head>
+<body>
+  <h1>Clasifica un material con Gemini</h1>
+  <p>Coloca un objeto frente a la cámara. La foto se envía a
+    Gemini solo cuando pulsas Capturar y clasificar.</p>
+  <video id="video" autoplay playsinline muted></video>
+  <div>
+    <button id="iniciar">Activar cámara</button>
+    <button id="capturar" disabled>Capturar y clasificar</button>
+    <button id="detener" disabled>Detener cámara</button>
+  </div>
+  <h2>Última foto enviada</h2>
+  <canvas id="foto" hidden></canvas>
+  <p id="estado" role="status">Cámara apagada.</p>
+  <h2>Resultado orientativo</h2>
+  <pre id="resultado">Aún no hay una clasificación.</pre>
+  <script src="/static/app.js"></script>
+</body>
+</html>
